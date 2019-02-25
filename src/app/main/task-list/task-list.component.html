@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h3>Edit {{task.name}} Task</h3>
+      <div *ngIf="task">
+        <div>
+          <label>Name of the Task
+            <input [(ngModel)]="task.name" placeholder="name" />
+          </label>
+        </div>
+        <div>
+          <label>Assigned To:
+            <input [(ngModel)]="task.assignedTo" placeholder="name" />
+          </label>
+        </div>
+        <div>
+          <label>Description:
+            <textarea [(ngModel)]="task.description" placeholder="name"> </textarea>
+          </label>
+        </div>
+        <div>
+          <label>Priority:
+            <select [(ngModel)]="task.priority" placeholder="name">
+              <option>Critical</option>
+              <option>High</option>
+              <option>Medium</option>
+              <option>low</option>
+            </select>
+          </label>
+        </div>
+        <button (click)="goBack()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "psyche": {
+    "task-manager": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/psyche",
+            "outputPath": "dist/task-manager",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +27,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/scss/bootstrap.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/bootstrap.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -62,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "psyche:build"
+            "browserTarget": "task-manager:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "psyche:build:production"
+              "browserTarget": "task-manager:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "psyche:build"
+            "browserTarget": "task-manager:build"
           }
         },
         "test": {
@@ -107,7 +110,7 @@
         }
       }
     },
-    "psyche-e2e": {
+    "task-manager-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "psyche:serve"
+            "devServerTarget": "task-manager:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "psyche:serve:production"
+              "devServerTarget": "task-manager:serve:production"
             }
           }
         },
@@ -136,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "psyche"
+  "defaultProject": "task-manager"
 }

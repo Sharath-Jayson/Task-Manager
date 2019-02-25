@@ -1,0 +1,18 @@
+<section class="section_main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading">
+          <h3>Task Lists</h3>
+          <ul class="list-group">
+            <li *ngFor="let task of tasks" class="list-group-item">{{task.name}}
+              <span (click)="deleteTask(task)" class="close">x</span>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <span (click)="getTasks()" routerLink="/detail/{{task.id}}" class="close">Edit</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
